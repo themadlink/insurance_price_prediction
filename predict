@@ -1,0 +1,45 @@
+#import required packages
+import numpy as np
+import pandas as pd
+import matplotlib.pyplot as plt
+import seaborn as sns
+#read the dataset
+data= pd.read_csv("insurance.csv")
+data.head()
+#shape of the dataset
+data.shape
+#discription of the data
+data.describe()
+#unique values in column "sex"
+data["sex"].unique()
+#unique values in column "region"
+data["region"].unique()
+sns.countplot(data["sex"])
+#encoding the categorical data
+from sklearn.preprocessing import LabelEncoder 
+le=LabelEncoder() 
+data["sex"]=le.fit_transform(data["sex"])
+data["smoker"]=le.fit_transform(data["smoker"])
+data["region"]=le.fit_transform(data["region"])
+sns.pairplot(data)
+#checking the null values
+data.isna().sum()
+#feature matrix
+x=data.iloc[:,0:-1].values
+y=data.iloc[:,-1].values
+data.shape
+#spliting the data in to train and test
+from sklearn.model_selection import train_test_split
+x_train,x_test,y_train,y_test=train_test_split(x,y,test_size=0.30,random_state=0)
+y_train.shape
+y_test.shape
+#import regression model
+from sklearn.ensemble import RandomForestRegressor
+regression=RandomForestRegressor(n_estimators=3,random_state=0)
+regression.fit(x_train,y_train)
+y_pred=regression.predict(x_test)
+#import r2_score
+from sklearn.metrics import r2_score
+#check the score of the model
+r2_score(y_test,y_pred)
+
