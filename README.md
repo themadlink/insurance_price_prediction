@@ -1,2 +1,4 @@
 # insurance_price_prediction
-Based on given features separating independent variable (x) and dependent variable (y) and predicting insurance amount that will be charged.
+Machine Learning (ML) is all about programming the unprogrammable. For example, if you want to predict an insurance price, ML helps to predict the price. An insurance price depends on various features such as age, type of coverage, amount of coverage needed, gender, body mass index (BMI), region, and other special factors like smoking to determine the price of the insurance.
+
+Traditionally most insurance companies employ actuaries to calculate the insurance premiums. Actuaries are business professionals who use mathematics and statistics to assess the risk of financial loss and predict the likelihood of an insurance premium and claim, based on the factors/features like age and gender, etc. They typically produce something called an actuarial table provided to an insurance company’s underwriting department, which uses the input to set insurance premiums. The insurance company calculates and writes all the programs, but it becomes much simpler by using Machine Learning.
